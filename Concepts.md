@@ -41,4 +41,9 @@
 : That's why need of higher order components came. HOC are functions that takes a component, performs a logic on it and returns a better improved components. but it is a bit complicated
 : and then comes the custom hooks for rescue. they work just like a function but they can have their own state, it means they can use hooks inside them
 
-9. 
+9. Difference between CSS file and Module.CSS file?
+
+: Scope of Styles: Normal CSS styles are global, meaning that if you define a style for a class, it can affect any element in your application that uses that class. On the other hand, CSS Modules are scoped locally to the component where they are imported. This means that the styles defined in a CSS Module file only apply to the component where the file is imported, and not to any other components in your application. As a result, you can use the same class name in different CSS Module files without worrying about conflicts
+: Usage: Normal CSS files are imported and used directly in your components, while CSS Module files are imported as an object that maps the class names to unique, generated class names. You then use these mapped class names to style your components
+
+10. 
