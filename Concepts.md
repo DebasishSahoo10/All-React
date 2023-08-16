@@ -46,4 +46,21 @@
 : Scope of Styles: Normal CSS styles are global, meaning that if you define a style for a class, it can affect any element in your application that uses that class. On the other hand, CSS Modules are scoped locally to the component where they are imported. This means that the styles defined in a CSS Module file only apply to the component where the file is imported, and not to any other components in your application. As a result, you can use the same class name in different CSS Module files without worrying about conflicts
 : Usage: Normal CSS files are imported and used directly in your components, while CSS Module files are imported as an object that maps the class names to unique, generated class names. You then use these mapped class names to style your components
 
-10. 
+10. What is Batching : What is Reconcilation : What is Fiber : How React calculates State : Does useState updates happens Asynchronously ?
+
+(a)
+```js
+const userEvent = () => {
+    setNumber(1)
+    setNumber(2)
+}
+```
+When react encounters multiple state updates at once, then it will take all the updates into count and then updates the state after that with the latest value. This thing called Batching.
+
+(b) What is Reconcilation : When react makes virtual DOM, it makes two copies actually. whenever a state changes, it push that changes into one of the V.DOM and then compare that with the another V.DOM with a diffing algorithim. That algorithim is called Reconcilation.
+
+(c) What is Fiber : When One of the Virtual DOMs get updated, then React uses a algo called Fiber to push that update to the actual DOM in threading manner
+
+(d) Does useState works asynchrnously : well, it doesn't have any Promise attached to it behind the scene, but the way it works feel like async. Basically React has two copies of state, one is of current instance and one is another instance, and when react updates the state, it doesn't update in the current instance but in the other one. that is why it feel async.
+
+(Refer the below image to sum it all up)
