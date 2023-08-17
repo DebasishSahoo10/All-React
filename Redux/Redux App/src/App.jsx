@@ -1,10 +1,10 @@
 import "./App.css";
-import { useSelector } from "react-redux";
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { Decrement, Increment, Reset, Set } from "./Redux/Actions";
 
 function App() {
-  const count = useSelector(state => state.count)
+  const count = useSelector((state) => state.count);
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -16,11 +16,10 @@ function App() {
         />
       </div>
       <h1>Redux + React</h1>
-      <div className="card">
-        <button>
-          Count is : {count}
-        </button>
-      </div>
+      <button onClick={() => dispatch(Increment())}>Count is : {count}</button>
+      <button onClick={() => dispatch(Decrement())}>Decrement</button>
+      <button onClick={() => dispatch(Reset())}>Reset</button>
+      <button onClick={() => dispatch(Set(10))}>Set to 10</button>
     </>
   );
 }
