@@ -19,6 +19,18 @@
 (c) Fortunately, useSelector automatically subscribes to the Redux store for us! That way, any time an action is dispatched, it will call its selector function again right away. If the value returned by the selector changes from the last time it ran, useSelector will force our component to re-render with the new data. All we have to do is call useSelector() once in our component, and it does the rest of the work for us.
 (warn) useSelector compares its results using strict === reference comparisons, so the component will re-render any time the selector result is a new reference! This means that if you create a new reference in your selector and return it, your component could re-render every time an action has been dispatched, even if the data really isn't different. For example, passing this selector to useSelector will cause the component to always re-render, because array.map() always returns a new array reference. so avoid using any of this methods.
 
-5. so what kind of state should go into redux? does input states or form states shoudl go?
+5. so what kind of state should go into redux? does input states or form states should go?
 
 : usually we should avoid pushing micro states into redux. simply because even if redux is optimised, pushing small things into them is still heavy and un-necessary. so all the micro state should be managed by component logic and on a big user event like form submit it can be pushed to reedux all at once.
+
+6. Difference between Connect API vs. Hooks way in Redux?
+
+7. What is the work of Immmer?
+
+8. Immer is built in Redux Toolkit
+
+9. What is that one thing you a global state management must be used for apart from state management?
+
+10. Why we need Redux Async Thunk?
+
+11. What is a Slice?
