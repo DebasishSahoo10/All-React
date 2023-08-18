@@ -24,8 +24,8 @@ export const taskSlice = createSlice({
       task.completed = !task.completed;
     },
     assignment : (state, action) => {
-        const task = state.find(task => task.id === action.payload.taskId)
-        task.assignedTo = action.payload.humanId
+      const task = state.find(task => task.id === action.payload.taskId)
+      task.assignedTo = action.payload.humanId
     }
   },
 });
